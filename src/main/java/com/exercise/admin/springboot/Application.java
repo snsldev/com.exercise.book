@@ -2,6 +2,7 @@ package com.exercise.admin.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 /*프로젝트의 최상단에 얘부터 먼저 읽는다*/
 @SpringBootApplication
 public class Application {
