@@ -91,4 +91,20 @@ public class PostsApiControllerTest {
         assertThat(all.get(0).getContent()).isEqualTo(expected_content);
 
     }
+
+    @Test
+    public void Posts_삭제(){
+
+        //given
+        String url = "http://localhost:" + port + "/api/v1/posts";
+        ResponseEntity<Long> responseEntity = restTemplate.postForEntity(url, PostsSaveRequestDto.builder().title("타이틀").content("컨텐츠").author("작성자").build(), Long.class);
+        long id = (long)responseEntity.getBody();
+        System.out.println("id: "+id);
+
+        //when
+        restTemplate.delete("/api/v1/posts/"+id);
+
+        //then
+        assertThat(postsRepository.findById(id)).isEmpty();
+    }
 }
