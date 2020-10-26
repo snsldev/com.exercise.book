@@ -4,3 +4,4 @@
 application-oauth.properties
 application-real-db.properties
 /build/
+/.idea/
